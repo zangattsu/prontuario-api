@@ -1,7 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { join } from 'path';
 import * as fs from 'fs';
-import { UserSchema } from './users/user.schema';
+import { UserSchema } from './schemas/user.schema';
 
 export function createTypeOrmConfig(): TypeOrmModuleOptions {
   const dbDir = join(process.cwd(), 'var', 'db');
