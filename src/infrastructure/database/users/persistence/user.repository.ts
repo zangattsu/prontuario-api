@@ -15,6 +15,7 @@ export class UserRepository implements IUserRepository {
   ) {}
 
   async create(user: User): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const userSchema = UserMapper.toPersistence(user);
     await this.repository.save(userSchema);
   }
@@ -36,7 +37,9 @@ export class UserRepository implements IUserRepository {
   }
 
   async update(user: User): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const userSchema = UserMapper.toPersistence(user);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     await this.repository.update({ id: user.id }, userSchema);
   }
 
@@ -46,6 +49,6 @@ export class UserRepository implements IUserRepository {
 
   async findAll(): Promise<User[]> {
     const userSchemas = await this.repository.find();
-    return userSchemas.map(schema => UserMapper.toDomain(schema));
+    return userSchemas.map((schema) => UserMapper.toDomain(schema));
   }
 }
