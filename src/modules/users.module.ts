@@ -7,7 +7,7 @@ import { GetUserHandler } from 'src/application/queries/users/get-user.handler';
 import { UserSchema } from 'src/infrastructure/database/schemas/user.schema';
 import { UserController } from 'src/presentation/user.controller';
 import { IUserRepositoryToken } from 'src/domain/interfaces/repositories/user.repository.interface';
-import { UserRepository } from 'src/infrastructure/database/users/persistence/user.repository';
+import { UserRepository } from 'src/infrastructure/database/persistence/user.repository';
 
 const commandHandlers = [CreateUserHandler];
 const queryHandlers = [GetUserHandler];
